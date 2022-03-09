@@ -1,0 +1,16 @@
+.header-right-container {
+    display: flex;
+    flex: 1;
+}
+
+.header-link-list {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    gap: 5vh;
+}
+
+.header-link {
+    list-style: none;
+}
