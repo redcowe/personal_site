@@ -1,0 +1,5 @@
+@media only sreen and (max-width: 400px) {
+    .about {
+        font-size: 12px;
+    }
+}
