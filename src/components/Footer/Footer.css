@@ -4,3 +4,8 @@
     align-items: center;
     flex: 0 1 50px;
 }
+
+.footer-list {
+    display: flex;
+    list-style: none;
+}

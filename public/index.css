@@ -12,5 +12,5 @@ html, body, #root {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
+    color: #FCFCfC;
 }
