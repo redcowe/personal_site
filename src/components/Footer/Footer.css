@@ -3,9 +3,11 @@
     justify-content: center;
     align-items: center;
     flex: 0 1 50px;
+    width: 100%;
 }
 
 .footer-list {
     display: flex;
     list-style: none;
+    gap: 10px;
 }
