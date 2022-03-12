@@ -7,6 +7,8 @@ import {
     Route
   } from "react-router-dom";
 import Home from "../routes/Home";
+import Projects from "../routes/Projects"
+import Blog from "../routes/Blog"
 
 export default function App() {
     return (
@@ -16,6 +18,8 @@ export default function App() {
                 <div className="contents">
                     <Routes>
                         <Route exact path="/" element={<Home />}></Route>
+                        <Route exact path="/projects" element={<Projects />}></Route>
+                        <Route exact path="/blog" element={<Blog />}></Route>
                     </Routes>    
                 </div>
                 <Footer />
