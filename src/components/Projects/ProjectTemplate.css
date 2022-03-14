@@ -24,7 +24,21 @@
 
 .project {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-top: 5px;
+}
+
+.project-left {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-right {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
 }
 
