@@ -3,7 +3,8 @@
     flex: 1;
 }
 
-.logo {
+.logo,
+.logo-container {
     width: 64px;
     height: 64px;
     border-radius: 50%;

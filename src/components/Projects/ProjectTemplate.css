@@ -10,8 +10,18 @@
 
 .current-projects,
 .completed-projects {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
     width: 50%;
     height: 50%;
+    gap: 5px;
+    overflow-y: auto;
+}
+
+.current-projects-h2,
+.completed-projects-h2 {
+    border-bottom: 1px solid #fcfcfc;
 }
 
 .project-container {
@@ -19,7 +29,7 @@
     justify-content: center;
     flex-direction: column;
     border-bottom: 1px solid #fcfcfc;
-    flex: 1;
+    flex: 0 1 25px;
 }
 
 .project {
