@@ -5,8 +5,10 @@ export default function BodyCenterBottom() {
     return (
         <div className="container">
             <p className="about">
-                Hi, I'm Josh, a developer who's always looking to learn more. Thanks for visiting my website.
-            </p>    
+                Hi, I'm Josh, a backend developer specializing in C# and Go who's always looking to learn more.</p>
+	    <p>
+		Thanks for visiting my website. 
+	    </p>
         </div>
     )
 }
