@@ -10,6 +10,7 @@ export default function Header() {
         <>
             <section className="header">
                 <HeaderLeft />
+                <HeaderRight />
             </section>
         </>
     )
