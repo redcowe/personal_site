@@ -13,7 +13,7 @@ const Projects = () => {
                 <h2 className="completed-projects-h2">Recently Completed</h2>
                 <ProjectTemplate title="Student Roster" desc="A C++ based command-line program" link="https://github.com/redcowe/student-roster"/>
                 <ProjectTemplate title="Akiya-Scraper" desc="A webscraper writen in Go" link="https://github.com/redcowe/akiya-scraper"/>
-                <ProjectTemplate title="Basic Info Site" desc="Repo for practicing with Nodejs" link="https://github.com/redcowe/student-roster"/>
+                <ProjectTemplate title="Basic Info Site" desc="Repo for practicing with Nodejs" link="https://github.com/redcowe/basic_informational_site"/>
             </div>
         </div>
     )
