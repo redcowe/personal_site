@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-screen">
   <head>
     <title>Josh C</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,13 +10,13 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
-  <body class="">
+  <body class=" flex-col bg-creme h-screen">
     <!-- Nav -->
     <%= render "shared/navbar"%>
-    <main class="">
+    <main class="flex flex-grow container mx-auto text-center">
       <%= yield %>
     </main>
-    <footer>
+    <footer class="absolute bottom-0 mb-4 w-screen">
       <%= render "shared/footer" %>
     </footer>
   </body>
