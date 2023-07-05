@@ -12,19 +12,20 @@ import Home from './components/Home';
 import Work from './components/Work';
 import Contact from './components/Contact';
 import Navbar from './common/Navbar';
+import NotFound from './components/NotFound';
 
 
 function App() {
   return (
-    <div className="App w-screen h-screen bg-main-background">
+    <div className="App w-screen h-screen custom-background p-4 text-secondary-color text-xl">
       <div className="container mx-auto">
         <Navbar />
           <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/work' element={<Work />}></Route>
             <Route path='/contact' element={<Contact />}></Route>
+            <Route path='*' element={<NotFound />}/>
           </Routes>
-          {/* <Contact /> */}
         <Footer />
 
       </div>

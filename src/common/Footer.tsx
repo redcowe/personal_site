@@ -7,7 +7,7 @@ function Footer() {
     return (
         <div className="container flex mx-auto justify-around">
             <div>
-                <p>Made with love by me!</p>
+                <p>Made with ❤ by <a href="https://www.linkedin.com/in/joshuacowell" className="">me</a>!</p>
             </div>
             <div className="flex gap-4">
                 <Link to="https://github.com/redcowe"><GitHubIcon /></Link>
