@@ -9,7 +9,7 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import Navbar from './common/Navbar';
 import NotFound from './components/NotFound';
-import Resume from './components/Resume';
+import BooksRoute from './components/BooksRoute';
 
 
 function App() {
@@ -19,8 +19,8 @@ function App() {
         <Navbar />
           <Routes>
             <Route path='/' element={<Home />}></Route>
-            <Route path='/resume' element={<Resume />}></Route>
             <Route path='/contact' element={<Contact />}></Route>
+            <Route path='/books' element={<BooksRoute />}></Route>
             <Route path='*' element={<NotFound />}/>
           </Routes>
         <Footer />
