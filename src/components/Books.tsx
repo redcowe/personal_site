@@ -1,24 +1,31 @@
 export interface Book {
     title: string,
-    pages: number,
+    page: number,
+    author: Author
 }
 
-export const Books = (props: { books?: Book[] | string }) => {
-    if (props.books === undefined) {
+interface Resource {
+    book: Book
+}
+
+interface Author {
+    name: string
+}
+export const Books = (props: { resources?: [] | string }) => {
+    if (props.resources === undefined) {
         const message = "Unable to fetch :("
         return (<div>{message}</div>)
     }
-    if (typeof props.books === "string") {
-        return (<div>{props.books}</div>)
+    if (typeof props.resources === "string") {
+        return (<div>{props.resources}</div>)
     }
+    props.resources.map((resource: Resource) => {
+        console.log(resource.book.page)
+    })
     return(
         <>
-        {props.books.map((book: Book) => {
-            return (
-            <li>
-                <div>{book.title}</div>
-            </li>)
-        })}
+        <li>hi</li>
         </>
-    )
+        )
 }
+

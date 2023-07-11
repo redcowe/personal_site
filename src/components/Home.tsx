@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Book, Books } from "./Books";
+import { Books } from "./Books";
 
 const Home = () => {
 
     const [isLoadingBooks, setIsLoadingBooks] = useState<boolean>(true)
-    const [books, setBooks] = useState<Book[] | string>()
+    const [resources, setResources] = useState<[] | string>()
     useEffect(() => {
-        getBooks(setIsLoadingBooks, setBooks);
+        getBooks(setIsLoadingBooks, setResources);
     }, [])
 
     return (
@@ -36,7 +35,7 @@ const Home = () => {
                     Recently Read Books:
                     <ul id="recent-book-list">
                         { isLoadingBooks && <div>Loading...</div>}
-                        { books && <Books books={books}/>}
+                        { resources && <Books resources={resources}/>}
                     </ul>
                 </div>
             </div>
@@ -45,13 +44,12 @@ const Home = () => {
     );
 }
 
-function getBooks(setIsLoading: (bool: boolean) => void, setBooks: (books: Book[] | string) => void) {
-    const API = "https://api.jcowe.jp"
+function getBooks(setIsLoading: (bool: boolean) => void, setBooks: (books: [] | string) => void) {
+    const API = "http://localhost:8080/books"
     fetch(API)
         .then((response) => {
             return response.json()
-        }).then((data: Book[]) => {
-            // setBooks(data)
+        }).then((data) => {
             setIsLoading(false)
             setBooks(data)
         }).catch(() => {
