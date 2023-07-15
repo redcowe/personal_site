@@ -7,8 +7,8 @@ const Home = () => {
     const [currentResources, setCurrentResources] = useState<[] | string>()
     const [readResources, setReadResources] = useState<ReadBookResponse | string>()
     useEffect(() => {
-        getCurrentBooks(setIsLoadingCurrentBooks, setCurrentResources);
-        getReadBooks(setIsLoadingReadBooks, setReadResources)
+         getCurrentBooks(setIsLoadingCurrentBooks, setCurrentResources);
+         getReadBooks(setIsLoadingReadBooks, setReadResources)
     }, [])
 
     return (

@@ -53,9 +53,6 @@ export const ReadBooks = ((props: {response?: ReadBookResponse | string}) => {
     if (typeof props.response === "string") {
         return (<div>{props.response}</div>)
     }
-    console.log(props.response.resources.map((resource: Resource) => {
-        console.log(resource.book.author.name)
-    }))
     return(
         <>
         {props.response.resources.slice(0, 3).map((resource: Resource) => {
