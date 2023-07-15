@@ -57,7 +57,7 @@ const Home = () => {
 
 //TODO Refactor to remove duplicate code
 function getReadBooks(setIsLoadingReadBooks: (loading: boolean) => void, setReadBooks: (books: ReadBookResponse | string) => void) {
-    const API = "http://localhost:8080/read"
+    const API = " https://api.jcowe.jp/read"
     fetch(API)
         .then((response) => {
             return response.json()
@@ -71,7 +71,7 @@ function getReadBooks(setIsLoadingReadBooks: (loading: boolean) => void, setRead
 }
 
 function getCurrentBooks(setIsLoading: (bool: boolean) => void, setBooks: (books: [] | string) => void) {
-    const API = "http://localhost:8080/books"
+    const API = " https://api.jcowe.jp/books"
     fetch(API)
         .then((response) => {
             return response.json()
