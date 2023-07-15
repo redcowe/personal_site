@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { Books } from "./Books";
+import { useEffect, useState } from "react";
+import { CurrentBooks, ReadBooks, ReadBookResponse } from "./Books";
 
 const Home = () => {
-
-    const [isLoadingBooks, setIsLoadingBooks] = useState<boolean>(true)
-    const [resources, setResources] = useState<[] | string>()
+    const [isLoadingReadBooks, setIsLoadingReadBooks] = useState<boolean>(true)
+    const [isLoadingCurrentBooks, setIsLoadingCurrentBooks] = useState<boolean>(true)
+    const [currentResources, setCurrentResources] = useState<[] | string>()
+    const [readResources, setReadResources] = useState<ReadBookResponse | string>()
     useEffect(() => {
-        getBooks(setIsLoadingBooks, setResources);
+        getCurrentBooks(setIsLoadingCurrentBooks, setCurrentResources);
+        getReadBooks(setIsLoadingReadBooks, setReadResources)
     }, [])
 
     return (
@@ -30,12 +32,21 @@ const Home = () => {
                 </ul>
             </div>
         </div>
-            <div className="container ">
+            <div className="container">
                 <div>
-                    Recently Read Books:
-                    <ul id="recent-book-list">
-                        { isLoadingBooks && <div>Loading...</div>}
-                        { resources && <Books resources={resources}/>}
+                    Currently Reading:
+                    <ul id="current-book-list">
+                        { isLoadingCurrentBooks && <div>Loading...</div>}
+                        { currentResources && <CurrentBooks resources={currentResources}/>}
+                    </ul>
+                </div>
+            </div>
+            <div className="container">
+                <div>
+                    Recently Read:
+                    <ul>
+                    { isLoadingReadBooks && <div>Loading...</div>}
+                    { readResources && <ReadBooks response={readResources}/>}
                     </ul>
                 </div>
             </div>
@@ -44,7 +55,22 @@ const Home = () => {
     );
 }
 
-function getBooks(setIsLoading: (bool: boolean) => void, setBooks: (books: [] | string) => void) {
+//TODO Refactor to remove duplicate code
+function getReadBooks(setIsLoadingReadBooks: (loading: boolean) => void, setReadBooks: (books: ReadBookResponse | string) => void) {
+    const API = "http://localhost:8080/read"
+    fetch(API)
+        .then((response) => {
+            return response.json()
+        }).then((data) => {
+            setIsLoadingReadBooks(false)
+            setReadBooks(data)
+        }).catch(() => {
+            setIsLoadingReadBooks(false)
+            setReadBooks("Unable to fetch :(")
+        })
+}
+
+function getCurrentBooks(setIsLoading: (bool: boolean) => void, setBooks: (books: [] | string) => void) {
     const API = "http://localhost:8080/books"
     fetch(API)
         .then((response) => {
