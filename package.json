@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/redcowe/personal_site#readme",
   "dependencies": {
+    "@11ty/eleventy": "^3.0.0",
     "htmx.org": "^2.0.4",
     "nunjucks": "^3.2.4"
   }
