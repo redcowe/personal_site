@@ -1,4 +1,5 @@
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy("/assets")
   eleventyConfig.addCollection("blog", function(collection) {
     return collection.getFilteredByGlob("blog/*.md");
   });
