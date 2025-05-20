@@ -1,0 +1,38 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+    <div>
+        <ul class="flex gap-2 w-full justify-around">
+            <li>
+                <a href="https://github.com/redcowe" target="_blank">github</a>
+            </li>
+            <li>
+                <a href="mailto:joshuacowell&#64;hotmail&#46;com">joshuacowell [at] hotmail [dot] com</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/joshuacowell/" target="_blank">linkedin</a>
+            </li>
+        </ul>
+    </div>
+    <div>
+        <p>About</p>
+        <p>I like learning how things work.</p>
+        <br>
+        <p>I currently work as a Software Developer at <u><a href="https://steamship.co.jp/" target="_blank">Steamship</a></u> focusing on the backend and infrastructure.</p>
+        <br>
+        <p>I enjoy particating in CTFs and learning about security in my free time.</p>
+        <br>
+    </div>
+    <div>
+        <p>Blog</p>
+        <ul class="flex flex-col gap-1 list-disc list-inside">
+            {% for post in collections.blog%}
+                <li>
+                    <u>
+                        <a href="{{post.url}}"> {{ post.data.title }}</a>
+                    </u>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
