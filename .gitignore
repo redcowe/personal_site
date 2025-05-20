@@ -138,8 +138,6 @@ yarn-error.log*
 # production
 /build
 
-/_site
-
 # misc
 .DS_Store
 .env.local
